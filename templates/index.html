@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Analyzer</title>
+    <link rel="icon" href="/static/logo.jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        :root {
+            --background-color: #f5f5f5;
+            --card-color: #fff;
+            --text-color: #333;
+            --footer-color: #666;
+            --button-background: #0095ff;
+            --button-color: #fff;
+            --secondary-color: #F7DED0;
+            --accent-color: #E8E1FD;
+        }
+
+        body {
+            font-family: 'Poppins', serif;
+            /* Poppins font */
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            /* Light background */
+        }
+
+        header {
+            background-color: #fff;
+            /* White header */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: var(--text-color);
+            /* Darker text */
+        }
+
+        main {
+            padding: 50px;
+            /* Increased padding for spacious feel */
+        }
+
+        .text-analysis {
+            background-color: var(--card-color);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            margin-right: 4vw;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 50vw;
+            /* Rounded corners */
+            display: inline-flex;
+        }
+
+        .text-analysiss {
+            background-color: var(--card-color);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            /* Rounded corners */
+            width: 30vw;
+            display: inline-block;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--text-color);
+            font-size: 1.2em;
+        }
+
+        .text-input {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: var(--button-background);
+            /* Blue button */
+            color: var(--button-color);
+            padding: 5px 25px;
+            /* Adjust padding for balanced look */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            /* Bold text for emphasis */
+        }
+
+        .output {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            flex-direction: column;
+            margin-top: 35px;
+        }
+
+        .output p {
+            flex-basis: 45%;
+            padding: 10px;
+            margin: 0;
+            color: var(--text-color);
+            /* Lighter text */
+            display: inline;
+        }
+
+        .additional-features {
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            color: var(--footer-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .box {
+            height: 100px;
+            width: 100%;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            resize: vertical;
+            font-family: inherit;
+            font-size: inherit;
+            min-height: 10em;
+            max-height: 30em;
+            margin-right: 20px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .container {
+                flex-wrap: wrap;
+            }
+
+            form {
+                /* flex-wrap: wrap; */
+            }
+
+            .box {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            button:first-child {
+                margin-right: 5px;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            /* Adjust width as needed */
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .Polarity {
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Impact Analyzer</h1>
+    </header>
+    <main>
+        <div class="container">
+            <section class="text-analysis">
+                <h2>Your tool for unveiling the true influence and effect of your text. Discover the power of your words
+                    as we analyze the overall impact they hold within your content.</h2>
+                <div class="text-input">
+                    <form action="/analyze" method="post" id="text-form">
+                        <textarea name="text-input" class="box" id="text-input" placeholder="Enter Text"></textarea>
+                        <div class="btn">
+                            <button type="submit">Calculate</button>
+                            <button type="reset">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="text-analysiss">
+                <div class="output" id="output">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Positive Score</th>
+                                <th>Negative Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="Polarity">Polarity Score<br>-</td>
+                            </tr>
+                            <tr>
+                                <th>Average Reading Time</th>
+                                <th>Average Sentence Length</th>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <section class="additional-features">
+            <h1 style="text-align: center;margin-bottom: 20px;font-size: 2.0em;">What this means?</h1>
+            <h2>Positive Score</h2>
+            <p>The positive scoring functionality enables you to assess the level of positivity in your text, measuring
+                its overall uplifting effect. It is derived from a comprehensive database containing more than 2000
+                positive words. A higher score signifies a stronger degree of positivity and impact within your content.
+            </p>
+            <h2>Negative Score</h2>
+            <p>The negative score functionality aids in assessing the negativity within your text, revealing its adverse
+                impact. It is calculated based on a comprehensive list of over 2000 negative words. Higher the score,
+                the more negative the content's effect is perceived to be.</p>
+            <h2>Polarity Score</h2>
+            <p>The polarity score functions as a gauge of the general sentiment conveyed in a text. It is calculated
+                using precise equations and varies between -1 and 1. A more negative score implies a greater presence of
+                negative sentiment in the text, whereas a more positive score signifies a higher prevalence of positive
+                sentiment. A text that is well-balanced and neutral usually falls near zero on the polarity spectrum.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Impact Analyzer<br>
+            Made with 🧡 by Ishan and Yayaati</p>
+    </footer>
+    <script>
+        document.getElementById('text-form').onsubmit = function (event) {
+            event.preventDefault();
+            fetch('/analyze', {
+                method: 'POST',
+                body: new FormData(document.getElementById('text-form'))
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('output').innerHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Positive Score</th>
+                                <th>Negative Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${data.positive_score}</td>
+                                <td>${data.negative_score}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="Polarity">Polarity Score<br>${data.polarity_score}</td>
+                            </tr>
+                            <tr>
+                                <th>Average Reading Time</th>
+                                <th>Average Sentence Length</th>
+                            </tr>
+                            <tr>
+                                <td>${data.reading_time}</td>
+                                <td>${data.average_sentence_length}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            });
+        }
+    </script>
+</body>
+
+</html>
