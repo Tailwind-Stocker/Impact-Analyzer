@@ -7,20 +7,20 @@ In today's digital world, where communication happens instantaneously and conten
 
 Impact Analyzer delves deeper than surface-level analysis, providing insights into two key aspects of your writing:
 
-#### Toxicity Detection:
+#### Toxicity Detection
 
 This feature identifies potentially offensive, hateful, or discriminatory language. It helps you avoid inadvertent harm and protects your reputation by flagging words or phrases that could be construed negatively.
 
-#### Nuance Analysis:
+#### Nuance Analysis
 
 Beyond just toxicity, Impact Analyzer goes further by understanding the context and subtle aspects of your text. This is especially valuable when dealing with sarcasm, humor, or potentially ambiguous language. The tool helps ensure your message is interpreted as intended, minimizing the risk of misunderstandings.
 
 ## Benefits of Using Impact Analyzer:
 
-#### Enhanced Public Image:
+#### Enhanced Public Image
 By proactively identifying and addressing potential issues before publication, you can mitigate the risk of publishing harmful content and safeguard your reputation.
 Informed Decisions: Gain confidence in what you share. Impact Analyzer's feedback empowers you to make informed decisions about your content, ensuring it aligns with your intended message.
-#### Streamlined Workflow:
+#### Streamlined Workflow
 Integrate Impact Analyzer seamlessly into your content creation process. Analyze your writing as you go, saving time and ensuring consistent quality across your publications.
 
 ## Important Considerations
