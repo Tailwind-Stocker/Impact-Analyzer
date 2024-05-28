@@ -30,3 +30,5 @@ While Impact Analyzer is a powerful tool, it's important to remember that it's d
 ## Embrace Informed Communication
 
 Impact Analyzer offers a valuable safeguard for anyone who wants to communicate effectively and minimize the risk of unintended consequences. By incorporating this tool into your workflow, you can publish with confidence, ensuring your message lands as intended and fosters positive interactions.
+
+Thank You for Reading!
