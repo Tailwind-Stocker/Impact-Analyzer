@@ -32,3 +32,8 @@ While Impact Analyzer is a powerful tool, it's important to remember that it's d
 Impact Analyzer offers a valuable safeguard for anyone who wants to communicate effectively and minimize the risk of unintended consequences. By incorporating this tool into your workflow, you can publish with confidence, ensuring your message lands as intended and fosters positive interactions.
 
 Thank You for Reading!
+
+![image](https://github.com/Tailwind-Stocker/Impact-Analyzer/assets/134867906/bbd762c9-3440-42d8-9c40-fce9a9a521e8)
+
+https://impactanalyzerr.azurewebsites.net/
+
